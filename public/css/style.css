@@ -56,6 +56,71 @@
 @import url("//fonts.googleapis.com/css?family=Nunito:400,600,700,800");
 @import url("https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 6%;
+    background-color:transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+.scrolled {
+    padding: auto;
+    background: #0033a0;
+}
+
+nav a img{
+    width: 100px;
+    transition: height 0.3s ease;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+    justify-content: flex-end; /* Agar teks ada di sisi kanan */
+    align-items: center;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+.nav-links ul li a.active {
+    color: #EFE40E;
+}
+
+.nav-links ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #EFE40E;
+    margin: auto;
+    display: block;
+    transition: .5s;
+}
+
+.nav-links ul li a:hover::after{
+    width: 100%;
+}
+
 .btn:focus,
 .btn:active,
 .btn:active:focus,
@@ -346,6 +411,8 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 .info-card {
     margin-top: -150px;
     border-radius: 999px;
+    position: relative;
+    z-index: 10;
 }
 
 .box-card-primary {
@@ -372,12 +439,19 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     padding: 30px;
 }
 
-.infostore {
+/* .infostore {
     transform: scale(3);
-}
+} */
 
 .card-icon-primary {
-    margin: 14px;
+    display: flex;
+    align-items: center; /* Agar ikon sejajar vertikal dengan teks */
+    gap: 10px; /* Jarak antara ikon dan teks */
+}
+
+.card-icon-primary img {
+    max-width: 50px; /* Sesuaikan ukuran ikon */
+    height: auto;
 }
 
 .card-icon-secondary {
@@ -4308,6 +4382,115 @@ body.layout-3 .main-footer {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    min-height: 75vh;
+    background-image: url('../img/hero1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 51, 160, 1), rgba(0, 51, 160, 0));
+}
+
+.banner .container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.banner .container .text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    width: 1000px;
+}
+
+.banner .container .text h1 {
+    font-size: 4.5rem;
+    padding-bottom: 2rem;
+}
+
+.banner .container .text p {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.banner-info-card {
+    width: 100%;
+    background-image: url('../img/vehicle-repair.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.banner-info-card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 160, 0.9);
+}
+
+.banner-info-card .container {
+    width: 80%;
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: flex-start;
+    z-index: 1;
+    position: relative;
+}
+
+.banner-info-card .container .text {
+    position: relative;
+    z-index: 1;
+    color: #EFE40E;
+    max-width: 100%;
+}
+
+.banner-info-card .container .text h3 {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.banner-info-card .container .text p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-bottom: 2rem;
+    color: #fff;
+}
+
+.banner-info-card .container img {
+    width: 15%;
+    padding-top: 50px;
+    padding-bottom: 32px;
 }
 
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active a {
