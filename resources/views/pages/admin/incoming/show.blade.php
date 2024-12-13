@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group col-md-6 col-12">
                                         <label>Harga Satuan</label>
-                                        <p>{{ $incoming->price }} KM</p>
+                                        <p>{{ $incoming->price }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -64,10 +64,6 @@
                                         <p>{{ $incoming->condition }}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-footer text-right">
-                                <a href="{{ route('incoming.edit', $incoming->id) }}" class="btn btn-primary">Edit
-                                    Produk</a>
                             </div>
                         </div>
                     </div>
