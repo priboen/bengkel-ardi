@@ -28,7 +28,8 @@
                     <div class="col-12 col-md-12 col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <img alt="image" src="{{ asset('storage/product_images/' . $product->image) }}">
+                                <img alt="image" src="{{ asset('storage/product_images/' . $product->image) }}"
+                                    class="img-thumbnail mb-3" style="max-width: 200px;">
                                 <div class="row">
                                     <div class="form-group col-md-6 col-12">
                                         <label>Nama Produk</label>
