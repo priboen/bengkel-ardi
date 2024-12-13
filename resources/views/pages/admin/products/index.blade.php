@@ -57,6 +57,7 @@
                                             <th>Nama Produk</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
+                                            <th>Jumlah Stok</th>
                                             <th>Action</th>
                                         </tr>
                                         @foreach ($products as $pd)
@@ -65,6 +66,7 @@
                                                 <td>{{ $pd->name }}</td>
                                                 <td>{{ $pd->category->name }}</td>
                                                 <td>{{ $pd->price }}</td>
+                                                <td>{{ $pd->stock }}</td>
                                                 <td>
                                                     <div class="d-flex justify-content-start">
                                                         <a href='{{ route('product.show', $pd->id) }}'

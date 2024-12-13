@@ -37,4 +37,11 @@ class Product extends Model
             ? asset('storage/product_images/' . $value)
             : asset('img/avatar/avatar-1.png');
     }
+
+    public function getStockAttribute()
+    {
+        $incoming = $this->incomingItems()->sum('quantity');
+        $outgoing = $this->outgoingItems()->sum('quantity');
+        return $incoming - $outgoing;
+    }
 }
