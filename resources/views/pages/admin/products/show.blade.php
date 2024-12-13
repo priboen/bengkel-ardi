@@ -28,16 +28,7 @@
                     <div class="col-12 col-md-12 col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="profile-widget-header">
-                                    <img alt="image" src="{{ asset('storage/product_images/' . $product->image) }}"
-                                        class="rounded-circle profile-widget-picture">
-                                    <div class="profile-widget-items">
-                                        <div class="profile-widget-item">
-                                            <div class="profile-widget-item-label">Email</div>
-                                            <div class="profile-widget-item-value">{{ auth()->user()->email }}</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <img alt="image" src="{{ asset('storage/product_images/' . $product->image) }}">
                                 <div class="row">
                                     <div class="form-group col-md-6 col-12">
                                         <label>Nama Produk</label>
