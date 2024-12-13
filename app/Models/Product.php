@@ -21,6 +21,16 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function incomingItems()
+    {
+        return $this->hasMany(IncomingItem::class);
+    }
+
+    public function outgoingItems()
+    {
+        return $this->hasMany(OutgoingItem::class);
+    }
+
     public function getImageUrlAttribute($value)
     {
         return $value
