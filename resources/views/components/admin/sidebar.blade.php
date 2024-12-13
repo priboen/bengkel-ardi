@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Kings Motor</a>
+            <a href="{{ route('home') }}">Kings Motor</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">KM</a>
+            <a href="{{ route('home') }}">KM</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Admin</li>
@@ -19,10 +19,10 @@
                         <a class="nav-link" href="{{ route('categories.index') }}">Kategori Produk</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">Barang Masuk</a>
+                        <a class="nav-link" href="{{ route('incoming.index') }}">Barang Masuk</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">Barang Keluar</a>
+                        <a class="nav-link" href="{{ route('outgoing.index') }}">Barang Keluar</a>
                     </li>
                 </ul>
             </li>
@@ -38,14 +38,9 @@
                         <a class="nav-link" href="">Video Beranda</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">Profil Perusahaan</a>
+                        <a class="nav-link" href="{{ route('companies.show', 1) }}">Profil Perusahaan</a>
                     </li>
                 </ul>
             </li>
-            <div class="hide-sidebar-mini mt-4 mb-4 p-3">
-                <a href="https://getstisla.com/docs" class="btn btn-danger btn-lg btn-block btn-icon-split">
-                    <i class="fas fa-rocket"></i> Keluar
-                </a>
-            </div>
     </aside>
 </div>

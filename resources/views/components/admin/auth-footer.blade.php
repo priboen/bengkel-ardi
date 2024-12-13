@@ -1,3 +1,3 @@
   <div class="simple-footer">
-      Copyright &copy; Nama Website/Pengembang
+      Copyright &copy; Astami Tech Solutions
   </div>
