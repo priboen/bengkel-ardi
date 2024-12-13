@@ -16,6 +16,12 @@ class ProductController extends Controller
             ->paginate(10);
         return view('pages.admin.products.index', compact('products'));
     }
+
+    public function show(Product $product)
+    {
+        return view('pages.admin.products.show', compact('product'));
+    }
+
     public function create()
     {
         $category = Category::all();
