@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Rombongan Belajar')
+@section('title', 'Kategori')
 
 @push('style')
     <link rel="stylesheet" href="{{ asset('library/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">

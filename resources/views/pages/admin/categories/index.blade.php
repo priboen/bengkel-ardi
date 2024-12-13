@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Grup Belajar')
+@section('title', 'Kategori')
 
 @push('style')
     <!-- CSS Libraries -->
