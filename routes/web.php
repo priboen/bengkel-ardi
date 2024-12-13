@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\IncomingItemController;
@@ -17,9 +18,7 @@ Route::get('login', function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('home', function () {
-        return view('pages.admin.dashboard', ['type_menu' => 'home']);
-    })->name('home');
+    Route::get('home', [AdminDashboardController::class, 'index'])->name('home');
 
     Route::resource('product', ProductController::class);
     Route::resource('categories', CategoryController::class);
