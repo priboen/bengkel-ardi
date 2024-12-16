@@ -36,26 +36,26 @@
         </div>
     </nav>
     <div class="banner">
-        <div class="container">
-            <div class="text">
-                <h1>From Breakdown to Back <span>on the Road.</span></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        <div class="contain">
+            <div class="text text-white">
+                <h1 class="font-weight-bold">From Breakdown to Back <br>on the Road.</br></h1>
+                <p ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</br>
                     ad minim veniam, quis nostrud exercitation.</p>
             </div>
         </div>
     </div>
-    <section class="info-card container-card container">
+    <section class="info-card container-card contain">
         <!-- Card 1 -->
-        <div class="full-info-card d-flex ">
+        <div class="full-info-card d-flex">
             <div class="banner-info-card">
-                <div class="container">
-                    <img src="{{ asset('/img/landing/info-store.svg') }}" alt="product">
+                <div class="contain">
+                    <img src="{{ asset('/img/landing/info-store.svg') }}" alt="product" class="icon1">
                     <div class="text">
-                        <h3>
+                        <h3 class="contain text-secondary">
                             30+ Cabang Jabodetabek
                         </h3>
-                        <p>
+                        <p class="contain text-white">
                             Bengkel BOS memiliki 30 cabang yang tersebar di area JABODETABEK. BOS hadir untuk
                             melayani
                             perawatan
@@ -68,9 +68,9 @@
             <!-- Card 2 -->
             <div class="box-card-secondary bg-white3">
                 <div class="card-icon-secondary">
-                    <img src="{{ asset('/img/landing/icon-product.svg') }}" alt="icon2">
+                    <img src="{{ asset('/img/landing/icon-product.svg') }}" alt="icon2" class="icon2">
                 </div>
-                <h5 class="card-head-secondary text-dark">50+ Produk tersedia</h5>
+                <h6 class="card-head-secondary text-dark">50+ Produk tersedia</h6>
                 <p class="card-desc-secondary">
                     Kami menyediakan lebih dari 50 produk yang tersedia di semua cabang kami.
                 </p>
@@ -79,9 +79,9 @@
             <!-- Card 3 -->
             <div class="box-card-secondary bg-white2">
                 <div class="card-icon-secondary">
-                    <img src="{{ asset('/img/landing/icon-cs.svg') }}" alt="icon3">
+                    <img src="{{ asset('/img/landing/icon-cs.svg') }}" alt="icon3" class="icon3">
                 </div>
-                <h5 class="card-head-secondary text-dark">Customer Service</h5>
+                <h6 class="card-head-secondary text-dark">Customer Service</h6>
                 <p class="card-desc-secondary">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
                 </p>
@@ -90,29 +90,17 @@
             <!-- Card 4 -->
             <div class="box-card-secondary bg-white1">
                 <div class="card-icon-secondary">
-                    <img src="{{ asset('/img/landing/icon-wrench.svg') }}" alt="icon4">
+                    <img src="{{ asset('/img/landing/icon-wrench.svg') }}" alt="icon4" class="icon4">
                 </div>
-                <h5 class="card-head-secondary text-dark">Mekanik Berkualitas</h5>
+                <h6 class="card-head-secondary text-dark">Mekanik Berkualitas</h6>
                 <p class="card-desc-secondary">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
                 </p>
             </div>
         </div>
     </section>
-    <section class="promotion">
-        <div class="container-promotion d-flex">
-            <h3 class="promotion-head text-dark">Bengkel Bos Genjas Genjos</h3>
-            <p class="promotion-desc">Bersama Bengkel Bos mobil anda akan kami genjas genjos</p>
-            <iframe width="860" height="415"
-                src="https://www.youtube.com/embed/zebErOjkeEk?si=jrZsK1xg2FvYkOET&autoplay=1&mute=1"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin">
-            </iframe>
-        </div>
-    </section>
     <section class="slidesicon">
-        <div class="logos bg-logoslides">
+        <div class="logos">
             <div class="logo-slides">
                 <img src="{{ asset('/img/landing/iconslides1.svg') }}" alt="logo1">
                 <img src="{{ asset('/img/landing/iconslides2.svg') }}" alt="logo2" width="250">
@@ -139,6 +127,101 @@
             </div>
         </div>
     </section>
+    <section class="bg-primary location">
+        <div class="contain">
+            <div class="container-location justify-content-between d-flex">
+                <div class="location-title text">
+                <h1 class="location-name"> Lokasi </h1>
+                </div>
+                <div class="location-body text">
+                <h1 class="location-head">Kings Motorcycle</h1>
+                <p class="location-desc d-flex">
+                    Bali United Office / Wisma Achilles Jl. Panjang No.29, RT.8/RW.1,
+                    Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus
+                    Jakarta 11510
+                </p> <label class="text"> (021) 56949669 </label>
+                <p>
+                    boscare@bengkelbos.co.id
+                </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div id="app">
+            <div class="contain container-contact">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-10 p-0 d-flex flex-row-reverse gap-5">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.316774763866!2d112.60862778600742!3d-7.966178158906411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788286b690daf5%3A0xd4c41035e86e672e!2sNasi%20Cumi%20Hitam%20Madura%20Pak%20Kris!5e0!3m2!1sid!2sid!4v1734185133265!5m2!1sid!2sid"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="card-body">
+                            <div class="text-primary text-center">
+                                <h1>Kontak Kami</h1>
+                            </div>
+                            <form method="POST">
+                                <div class="form-group floating-addon">
+                                    <label>Nama</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="far fa-user"></i>
+                                            </div>
+                                        </div>
+                                        <input id="name"
+                                            type="text"
+                                            class="form-control"
+                                            name="name"
+                                            autofocus
+                                            placeholder="Nama">
+                                    </div>
+                                </div>
+                                <div class="form-group floating-addon">
+                                    <label>Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                        </div>
+                                        <input id="email"
+                                            type="email"
+                                            class="form-control"
+                                            name="email"
+                                            placeholder="Email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea class="form-control"
+                                        placeholder="Masukkan pesan anda"
+                                        data-height="150"></textarea>
+                                </div>
+
+                                <div class="form-group text-right">
+                                    <button type="submit"
+                                        class="container-btn btn btn-lg btn-primary">
+                                        Kirim Pesan
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-7 p-0">
+                        <div id="map"
+                            class=""></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer id="footer" class="bg-primary">
+      <div class="contain footer d-flex justify-content-between align-items-center">
+        <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150" height="100"></a>
+        <div class="">
+          <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
+      </div>
+      <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
+    </footer>
     <script>
         document.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
