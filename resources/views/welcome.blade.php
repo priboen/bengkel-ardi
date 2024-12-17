@@ -151,7 +151,7 @@
         <div id="app">
             <div class="contain container-contact">
                 <div class="row">
-                    <div class="col-12 col-md-12 col-lg-10 p-0 d-flex flex-row-reverse gap-5">
+                    <div class="contact-box col-12 col-md-12 col-lg-10 p-0 d-flex flex-row-reverse gap-5">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.316774763866!2d112.60862778600742!3d-7.966178158906411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788286b690daf5%3A0xd4c41035e86e672e!2sNasi%20Cumi%20Hitam%20Madura%20Pak%20Kris!5e0!3m2!1sid!2sid!4v1734185133265!5m2!1sid!2sid"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <div class="card-body">
@@ -215,7 +215,7 @@
             </div>
     </section>
     <footer id="footer" class="bg-primary">
-      <div class="contain footer d-flex justify-content-between align-items-center">
+      <div class="contain d-flex justify-content-between align-items-center">
         <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150" height="100"></a>
         <div class="">
           <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>

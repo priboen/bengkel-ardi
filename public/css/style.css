@@ -397,6 +397,14 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 }
 
 @media (max-width: 1080px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .banner .contain {
+        margin-left: 5rem;
+    }
+    
     .contain {
         width: 100%;
         right: 2rem;
@@ -414,7 +422,9 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 
     .box-card-secondary {
-        padding: 187px;
+        padding: 180px;
+        padding-bottom: 10%;
+        padding-top: 10%;
     }
 
     .card-head-secondary {
@@ -427,6 +437,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
     .icon1 {
         transform: scale(2.5);
+        margin-left: 2.5rem;
     }
 
     .icon2, .icon3, .icon4 {
@@ -440,6 +451,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
     .card-desc-secondary {
         transform: scale(1);
+        margin-right: -9rem;
     }
 
     .info-card {
@@ -447,18 +459,54 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 
     .container-location {
-            display: flex;
-            justify-content: start;
-            padding: 40px;
-            flex-flow: column;
+        display: flex;
+        justify-content: start;
+        padding: 40px;
+        flex-flow: column;
     }
 
     .container-contact {
-            flex-flow: column;
+        flex-flow: column;
+    }
+
+    .location-title {
+        margin-left: -4rem;
+    }
+
+    .location-body {
+        transform: scale(0.8);
+        margin-left: -4rem;
+    }
+
+    .location-title h1 {
+        transform: scale(0.8);
+    }
+
+    .location-body h1{
+        text-wrap: nowrap;
+    }
+
+    .contact-box {
+        flex-wrap: wrap-reverse;
+        transform: scale(0.85);
+        max-width: 94%;
+    }
+
+    footer {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-right: 10%;
+    }
+
+    footer h5{
+        transform: scale(0.8);
+        margin-left: -1rem
+        ;
     }
 }
 
 @media (max-width: 425px) {
+
     .contain {
         width: 100%;
         right: 2rem;
@@ -502,6 +550,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
     .card-desc-secondary {
         transform: scale(1);
+        margin-right: -7rem;
     }
 
     .info-card {
@@ -510,6 +559,10 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
     .container-contact {
         flex-flow: column;
+    }
+
+    .footer-box {
+        transform: scale(5);
     }
 }
 
