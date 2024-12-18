@@ -88,3 +88,70 @@ nav a img {
     align-content: center;
     z-index: 1;
 }
+
+.bg-primary {
+    background-color: #0033a0 !important;
+}
+
+.bg-secondary {
+    background-color: #f79000 !important;
+}
+
+.bg-promotion {
+    background-color: #ffffff !important;
+}
+
+.bg-logoslides {
+    background-color: #f2f2f2 !important;
+}
+
+.bg-white3 {
+    background-color: #f2f2f2 !important;
+}
+
+.bg-white2 {
+    background-color: #f8f8f8 !important;
+}
+
+.bg-white1 {
+    background-color: #ffffff !important;
+}
+
+.text-primary,
+.text-primary-all *,
+.text-primary-all *:before,
+.text-primary-all *:after {
+    color: #0033a0 !important;
+}
+
+.text-secondary,
+.text-secondary-all *,
+.text-secondary-all *:before,
+.text-secondary-all *:after {
+    color: #f79000 !important;
+}
+
+.text-light,
+.text-light-all *,
+.text-light-all *:before,
+.text-light-all *:after {
+    color: #e3eaef !important;
+}
+
+.text-white,
+.text-white-all *,
+.text-white-all *:before,
+.text-white-all *:after {
+    color: #ffffff !important;
+}
+
+.text-dark,
+.text-dark-all *,
+.text-dark-all *:before,
+.text-dark-all *:after {
+    color: #191d21 !important;
+}
+
+.font-weight-normal {
+    font-weight: 500 !important;
+}
