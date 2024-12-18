@@ -30,7 +30,7 @@
         <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo"></a>
         <div class="nav-links">
             <ul>
-                <li><a href="#" class="active">Beranda</a></li>
+                <li><a href="{{ route('beranda') }}" class="active">Beranda</a></li>
                 <li><a href="{{ route('produk') }}">Product</a></li>
             </ul>
         </div>
