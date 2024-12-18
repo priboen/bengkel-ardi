@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bengkel Ardi</title>
+    <title>King's Motor Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('library/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -215,12 +215,12 @@
             </div>
     </section>
     <footer id="footer" class="bg-primary">
-      <div class="contain d-flex justify-content-between align-items-center">
+        <div class="contain d-flex justify-content-between align-items-center">
         <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150" height="100"></a>
         <div class="">
-          <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
-      </div>
-      <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
+            <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
+        </div>
+        <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
     </footer>
     <script>
         document.addEventListener('scroll', function() {
