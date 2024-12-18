@@ -43,10 +43,69 @@
                 </div>
             </div>
         </div>
-    </section>
+    <section id="promo">
+    <div class="contain promo-box d-flex">
+        <div class="sidebar contain">
+            <h1 class="font-weight-bold">Category</h1>
+            <ul>
+                <li><input type="checkbox" id="ban"><label for="ban">Ban</label></li>
+                <li><input type="checkbox" id="oli"><label for="oli">Oli</label></li>
+                <li><input type="checkbox" id="servis"><label for="servis">Servis</label></li>
+                <li><input type="checkbox" id="aki"><label for="aki">Aki</label></li>
+                <li><input type="checkbox" id="5w30"><label for="5w30">5W-30</label></li>
+                <li><input type="checkbox" id="5w40"><label for="5w40">5W-40</label></li>
+            </ul>
+            <button type="submit" class="container-btn btn btn-lg btn-primary">Apply</button>
+        </div>
+        <header>
+        <div class="promo-header contain">
+            <div class="promo-info">
+                <h1 class="font-weight-bold">Promo Bulan Ini</h1>
+                <p>Beberapa promo dari kami untuk pelanggan tercinta</p>
+                <div class="promo-banner">
+                    <img src="{{ asset('/img/hero1.png') }}" alt="Promo Bengkel" width="950">
+                </div>
+            </div>
+        </div>
+        </header>
+    </div>
     <section id="products">
-
-    </section>
+            <main class="product-section contain">
+                <h1 class="font-weight-bold">Ban</h1>
+                <div class="product-grid contain">
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="Ventus Prime 3">
+                    <h3>Ventus Prime 3</h3>
+                    <p>Rp15.190.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
+                    <h3>Ventus Prime 3</h3>
+                    <p>Rp15.190.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
+                    <h3>Ventus Prime 3</h3>
+                    <p>Rp15.190.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
+                    <h3>Ventus Prime 3</h3>
+                    <p>Rp15.190.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
+                    <h3>Ventus Prime 3</h3>
+                    <p>Rp15.190.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
+                    <h3>Ventus Prime 3</h3>
+                    <p>Rp15.190.000</p>
+                    </div>
+                </div>
+            </main>
+        </section>
     <footer id="footer" class="bg-primary">
         <div class="contain d-flex justify-content-between align-items-center">
         <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150" height="100"></a>
