@@ -31,7 +31,7 @@
         <div class="nav-links">
             <ul>
                 <li><a href="#" class="active">Beranda</a></li>
-                <li><a href="#">Product</a></li>
+                <li><a href="{{ route('produk') }}">Product</a></li>
             </ul>
         </div>
     </nav>
@@ -193,9 +193,7 @@
 
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea class="form-control"
-                                        placeholder="Masukkan pesan anda"
-                                        data-height="150"></textarea>
+                                    <textarea class="form-control" placeholder="Masukkan pesan anda" data-height="150"></textarea>
                                 </div>
 
                                 <div class="form-group text-right">

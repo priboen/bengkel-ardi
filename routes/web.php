@@ -12,9 +12,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('produk', function () {
+Route::get('/produk', function () {
     return view('product');
-});
+})->name('produk');
 
 Route::get('login', function () {
     return view('pages.admin.auth.login');
