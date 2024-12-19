@@ -27,8 +27,8 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Kategori Produk berhasil ditambah!');
     }
 
-    public function destroy(){
-        $category = Category::find(request('id'));
+    public function destroy(Category $category)
+    {
         $category->delete();
         return redirect()->route('categories.index')->with('success', 'Kategori Produk berhasil dihapus!');
     }
