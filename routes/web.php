@@ -6,15 +6,16 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\IncomingItemController;
 use App\Http\Controllers\OutgoingItemController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('beranda');
 
-Route::get('/produk', function () {
-    return view('product');
-})->name('produk');
+Route::get('/produk', [PromoController::class, 'promosForFrontend'])->name('produk');
+Route::post('/produk/filter', [PromoController::class, 'filterProducts'])->name('produk.filter');
+
 
 Route::get('login', function () {
     return view('pages.admin.auth.login');
@@ -23,7 +24,7 @@ Route::get('login', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('home', [AdminDashboardController::class, 'index'])->name('home');
-
+    Route::resource('promos', PromoController::class);
     Route::resource('product', ProductController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('companies', CompanyController::class);
