@@ -17,6 +17,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <style>
+        #promo {
+            padding-bottom: 50px;
+        }
+
+        #products {
+            padding-top: 100px;
+        }
+    </style>
 
     @stack('style')
 
@@ -43,115 +57,93 @@
                 </div>
             </div>
         </div>
-    <section id="promo">
-    <div class="contain promo-box d-flex">
-        <div class="sidebar contain">
-            <h1 class="font-weight-bold">Category</h1>
-            <ul>
-                <li><input type="checkbox" id="ban"><label for="ban">Ban</label></li>
-                <li><input type="checkbox" id="oli"><label for="oli">Oli</label></li>
-                <li><input type="checkbox" id="servis"><label for="servis">Servis</label></li>
-                <li><input type="checkbox" id="aki"><label for="aki">Aki</label></li>
-                <li><input type="checkbox" id="5w30"><label for="5w30">5W-30</label></li>
-                <li><input type="checkbox" id="5w40"><label for="5w40">5W-40</label></li>
-            </ul>
-            <button type="submit" class="container-btn btn btn-lg btn-primary">Search</button>
-        </div>
-        <header>
-        <div class="promo-header contain">
-            <div class="promo-info">
-                <h1 class="font-weight-bold">Promo Bulan Ini</h1>
-                <p>Beberapa promo dari kami untuk pelanggan tercinta</p>
-                <div class="promo-banner">
-                    <img src="{{ asset('/img/hero1.png') }}" alt="Promo Bengkel" width="950">
+        <section id="promo">
+            <div class="contain promo-box d-flex">
+                <div class="sidebar contain">
+                    <h1 class="font-weight-bold">Category</h1>
+                    {{-- <ul>
+                        @foreach ($categories as $category)
+                            <li>
+                                <input type="checkbox" id="category-{{ $category->id }}">
+                                <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                            </li>
+                        @endforeach
+                    </ul> --}}
+                    <ul>
+                        @foreach ($categories as $category)
+                            <li>
+                                <input type="checkbox" id="category-{{ $category->id }}">
+                                <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                            </li>
+                        @endforeach
+                    </ul>
+
                 </div>
+                <header>
+                    <div class="promo-header contain">
+                        <div class="promo-info">
+                            <h1 class="font-weight-bold">Promo Bulan Ini</h1>
+                            <p>Beberapa promo dari kami untuk pelanggan tercinta</p>
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    @foreach ($promos as $index => $promo)
+                                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                            <img src="{{ asset('storage/' . $promo->image_path) }}"
+                                                class="d-block w-100 carousel-image" alt="{{ $promo->name }}">
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </header>
             </div>
-        </div>
-        </header>
-    </div>
-    <section id="products">
-            <main class="product-section contain">
-                <h1 class="font-weight-bold">Ban</h1>
-                <div class="product-grid contain">
+            <section id="products-grid">
+                @foreach ($categories as $category)
+                    <main class="product-section contain">
+                        <h1 class="font-weight-bold">{{ $category->name }}</h1>
+                        <div class="product-grid contain">
+                            @foreach ($category->products as $product)
+                                <div class="product-card">
+                                    <img src="{{ asset('storage/product_images/' . $product->image) }}"
+                                        alt="{{ $product->name }}">
+                                    <h3>{{ $product->name }}</h3>
+                                    <p>Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </main>
+                @endforeach
+            </section>
+            {{-- <div id="product-grid" class="product-grid contain">
+                @foreach ($category->products as $product)
                     <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="Ventus Prime 3">
-                    <h3>Ventus Prime 3</h3>
-                    <p>Rp15.190.000</p>
+                        <img src="{{ asset('storage/product_images/' . $product->image) }}" alt="{{ $product->name }}">
+                        <h3>{{ $product->name }}</h3>
+                        <p>Rp {{ number_format($product->price, 0, ',', '.') }}</p>
                     </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
-                    <h3>Ventus Prime 3</h3>
-                    <p>Rp15.190.000</p>
-                    </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
-                    <h3>Ventus Prime 3</h3>
-                    <p>Rp15.190.000</p>
-                    </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
-                    <h3>Ventus Prime 3</h3>
-                    <p>Rp15.190.000</p>
-                    </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
-                    <h3>Ventus Prime 3</h3>
-                    <p>Rp15.190.000</p>
-                    </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/ban.png') }}" alt="ban">
-                    <h3>Ventus Prime 3</h3>
-                    <p>Rp15.190.000</p>
-                    </div>
-                </div>
-            </main>
-            <main class="product-section contain">
-                <h1 class="font-weight-bold">Oli</h1>
-                <div class="product-grid contain">
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/oli.png') }}" alt="Ventus Prime 3">
-                    <h3>Paket Oli 5W-30</h3>
-                    <p>Rp1.200.000</p>
-                    </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/oli.png') }}" alt="ban">
-                    <h3>Paket Oli 5W-30</h3>
-                    <p>Rp1.200.000</p>
-            </main>
-            <main class="product-section contain">
-                <h1 class="font-weight-bold">Servis</h1>
-                <div class="product-grid contain">
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/servis.png') }}" alt="Ventus Prime 3">
-                    <h3>Power Tune Uo</h3>
-                    <p>Rp6.200.000</p>
-                    </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/servis.png') }}" alt="ban">
-                    <h3>FreshCool</h3>
-                    <p>Rp1.300.000</p>
-            </main>
-            <main class="product-section contain">
-                <h1 class="font-weight-bold">Aki/ACCU</h1>
-                <div class="product-grid contain">
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/aki.png') }}" alt="Ventus Prime 3">
-                    <h3>Aki Solite</h3>
-                    <p>Rp1.400.000</p>
-                    </div>
-                    <div class="product-card">
-                    <img src="{{ asset('/img/bengkel-product/aki.png') }}" alt="ban">
-                    <h3>Aki Solite</h3>
-                    <p>Rp1.400.000</p>
-            </main>
+                @endforeach
+            </div> --}}
         </section>
+    </section>
     <footer id="footer" class="bg-primary">
         <div class="contain d-flex justify-content-between align-items-center">
-        <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150" height="100"></a>
-        <div class="">
-            <h5 class="copyright text-white font-weight-bold">Copyright © 2024 King's Motorcycle</h5>
-        </div>
-        <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
+            <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150"
+                    height="100"></a>
+            <div class="">
+                <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
+            </div>
+            <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
     </footer>
     <script>
         document.addEventListener('scroll', function() {
@@ -163,6 +155,9 @@
             }
         });
     </script>
+    
+
+
 </body>
 
 </html>

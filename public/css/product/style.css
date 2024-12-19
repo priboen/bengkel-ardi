@@ -15,6 +15,7 @@ body {
     width: 100%;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
 
 
@@ -43,7 +44,7 @@ nav a img {
 .nav-links {
     flex: 1;
     text-align: right;
-    justify-content: flex-end; /* Agar teks ada di sisi kanan */
+    justify-content: flex-end;
     align-items: center;
     margin-top: 10px;
 }
@@ -76,6 +77,12 @@ nav a img {
 
 .nav-links ul li a:hover::after {
     width: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
 .btn:focus,
@@ -327,7 +334,7 @@ color: #0033a0;
     .banner .contain .text{
         transform: scale(0.8);
     }
-    
+
     .contain {
         width: 100%;
         right: 2rem;

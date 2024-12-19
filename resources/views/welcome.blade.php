@@ -39,7 +39,7 @@
         <div class="contain">
             <div class="text text-white">
                 <h1 class="font-weight-bold">From Breakdown to Back <br>on the Road.</br></h1>
-                <p ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed do
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</br>
                     ad minim veniam, quis nostrud exercitation.</p>
             </div>
@@ -131,18 +131,18 @@
         <div class="contain">
             <div class="container-location justify-content-between d-flex">
                 <div class="location-title text">
-                <h1 class="location-name"> Lokasi </h1>
+                    <h1 class="location-name"> Lokasi </h1>
                 </div>
                 <div class="location-body text">
-                <h1 class="location-head">Kings Motorcycle</h1>
-                <p class="location-desc d-flex">
-                    Bali United Office / Wisma Achilles Jl. Panjang No.29, RT.8/RW.1,
-                    Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus
-                    Jakarta 11510
-                </p> <label class="text"> (021) 56949669 </label>
-                <p>
-                    boscare@bengkelbos.co.id
-                </p>
+                    <h1 class="location-head">Kings Motorcycle</h1>
+                    <p class="location-desc d-flex">
+                        Bali United Office / Wisma Achilles Jl. Panjang No.29, RT.8/RW.1,
+                        Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus
+                        Jakarta 11510
+                    </p> <label class="text"> (021) 56949669 </label>
+                    <p>
+                        boscare@bengkelbos.co.id
+                    </p>
                 </div>
             </div>
         </div>
@@ -152,8 +152,10 @@
             <div class="contain container-contact">
                 <div class="row">
                     <div class="contact-box col-12 col-md-12 col-lg-10 p-0 d-flex flex-row-reverse gap-5">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.316774763866!2d112.60862778600742!3d-7.966178158906411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788286b690daf5%3A0xd4c41035e86e672e!2sNasi%20Cumi%20Hitam%20Madura%20Pak%20Kris!5e0!3m2!1sid!2sid!4v1734185133265!5m2!1sid!2sid"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.316774763866!2d112.60862778600742!3d-7.966178158906411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788286b690daf5%3A0xd4c41035e86e672e!2sNasi%20Cumi%20Hitam%20Madura%20Pak%20Kris!5e0!3m2!1sid!2sid!4v1734185133265!5m2!1sid!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <div class="card-body">
                             <div class="text-primary text-center">
                                 <h1>Kontak Kami</h1>
@@ -167,12 +169,8 @@
                                                 <i class="far fa-user"></i>
                                             </div>
                                         </div>
-                                        <input id="name"
-                                            type="text"
-                                            class="form-control"
-                                            name="name"
-                                            autofocus
-                                            placeholder="Nama">
+                                        <input id="name" type="text" class="form-control" name="name"
+                                            autofocus placeholder="Nama">
                                     </div>
                                 </div>
                                 <div class="form-group floating-addon">
@@ -183,10 +181,7 @@
                                                 <i class="fas fa-envelope"></i>
                                             </div>
                                         </div>
-                                        <input id="email"
-                                            type="email"
-                                            class="form-control"
-                                            name="email"
+                                        <input id="email" type="email" class="form-control" name="email"
                                             placeholder="Email">
                                     </div>
                                 </div>
@@ -197,8 +192,7 @@
                                 </div>
 
                                 <div class="form-group text-right">
-                                    <button type="submit"
-                                        class="container-btn btn btn-lg btn-primary">
+                                    <button type="submit" class="container-btn btn btn-lg btn-primary">
                                         Kirim Pesan
                                     </button>
                                 </div>
@@ -206,24 +200,22 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-7 p-0">
-                        <div id="map"
-                            class=""></div>
+                        <div id="map" class=""></div>
                     </div>
                 </div>
             </div>
     </section>
-    <footer id="footer" class="bg-primary">
+    <footer id="footer-new" class="bg-primary">
         <div class="contain d-flex justify-content-between align-items-center">
-        <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150" height="100"></a>
-        <div class="">
-            <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
-        </div>
-        <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
+            <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150"
+                    height="100"></a>
+                <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
+            <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
     </footer>
     <script>
         document.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) { // Jika pengguna menggulir lebih dari 50px
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');

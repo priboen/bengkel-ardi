@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -351,7 +352,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     .banner .contain {
         margin-left: 5rem;
     }
-    
+
     .contain {
         width: 100%;
         right: 2rem;
@@ -364,7 +365,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 
     .full-info-card {
-        flex-flow: column; 
+        flex-flow: column;
         width: 80%;
     }
 
@@ -466,7 +467,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 
     .full-info-card {
-        flex-flow: column; 
+        flex-flow: column;
         width: 80%;
     }
 
@@ -620,6 +621,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 .footer {
     max-height: 10rem;
+    width: 100%;
 }
 
 .contain .footer-link {
@@ -628,6 +630,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 .copyright {
     padding-top: 5px;
+    font-size: 1rem;
 }
 
 .bg-primary {
@@ -1168,6 +1171,7 @@ select.form-control:not([size]):not([multiple]) {
 body,
 html {
     min-height: 100%;
+    overflow-x: hidden;
 }
 
 body {
