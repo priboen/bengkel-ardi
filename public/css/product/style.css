@@ -367,6 +367,7 @@ color: #0033a0;
 
     .promo-box {
         flex-wrap: wrap-reverse;
+        margin-top: -2rem;
         margin-left: -2px;
     }
 
