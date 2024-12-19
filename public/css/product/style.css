@@ -279,10 +279,8 @@ nav a img {
     outline: none;
 }
 
-
-.product-section h2 {
-margin-bottom: 15px;
-font-size: 20px;
+.product-section h1 {
+    padding-left: 1rem;
 }
 
 .product-grid {
@@ -290,12 +288,12 @@ display: grid;
 grid-template-columns: repeat(auto-fill, minmax(20rem, 4fr));
 gap: 2rem;
 margin-top: 3rem;
-margin-bottom: 15rem;
+margin-bottom: 5rem;
 }
 
 .product-card {
 background-color: white;
-padding: 15px;
+padding: 1rem;
 text-align: center;
 border-radius: 8px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -340,6 +338,76 @@ color: #0033a0;
         align-content: center;
         z-index: 1;
     }
+
+    .sidebar h1{
+        font-size: xx-large;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .sidebar li {
+        display: flex;
+        align-items: center;
+        margin-left: -1.65rem;
+        font-size: small;
+    }
+
+    .sidebar label {
+        padding-top: 1rem;
+    }
+
+    .sidebar button {
+        transform: scale(0.8);
+        margin-top: -1rem;
+        margin-left: -0.5rem;
+    }
+
+    .promo-box {
+        flex-wrap: wrap-reverse;
+        margin-left: -2px;
+    }
+
+    .promo-info h1 {
+        font-size: xx-large;
+    }
+
+    .promo-info p {
+        font-size: small;
+    }
+
+    .promo-banner img {
+        width: 350px;
+        margin-bottom: 3rem;
+    }
+
+    .product-section {
+        padding-right: 2rem;
+        margin-left: -0.5rem;
+    }
+
+    .product-section h1 {
+        padding-left: 2rem;
+        font-size: xx-large;
+    }
+
+    .product-section h3 {
+        font-size: small;
+    }
+
+    .product-card p {
+        font-size: smaller;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 4fr));
+        gap: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+        }
 
     footer {
         padding-top: 5%;

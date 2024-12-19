@@ -55,7 +55,7 @@
                 <li><input type="checkbox" id="5w30"><label for="5w30">5W-30</label></li>
                 <li><input type="checkbox" id="5w40"><label for="5w40">5W-40</label></li>
             </ul>
-            <button type="submit" class="container-btn btn btn-lg btn-primary">Apply</button>
+            <button type="submit" class="container-btn btn btn-lg btn-primary">Search</button>
         </div>
         <header>
         <div class="promo-header contain">
@@ -104,6 +104,45 @@
                     <p>Rp15.190.000</p>
                     </div>
                 </div>
+            </main>
+            <main class="product-section contain">
+                <h1 class="font-weight-bold">Oli</h1>
+                <div class="product-grid contain">
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/oli.png') }}" alt="Ventus Prime 3">
+                    <h3>Paket Oli 5W-30</h3>
+                    <p>Rp1.200.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/oli.png') }}" alt="ban">
+                    <h3>Paket Oli 5W-30</h3>
+                    <p>Rp1.200.000</p>
+            </main>
+            <main class="product-section contain">
+                <h1 class="font-weight-bold">Servis</h1>
+                <div class="product-grid contain">
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/servis.png') }}" alt="Ventus Prime 3">
+                    <h3>Power Tune Uo</h3>
+                    <p>Rp6.200.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/servis.png') }}" alt="ban">
+                    <h3>FreshCool</h3>
+                    <p>Rp1.300.000</p>
+            </main>
+            <main class="product-section contain">
+                <h1 class="font-weight-bold">Aki/ACCU</h1>
+                <div class="product-grid contain">
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/aki.png') }}" alt="Ventus Prime 3">
+                    <h3>Aki Solite</h3>
+                    <p>Rp1.400.000</p>
+                    </div>
+                    <div class="product-card">
+                    <img src="{{ asset('/img/bengkel-product/aki.png') }}" alt="ban">
+                    <h3>Aki Solite</h3>
+                    <p>Rp1.400.000</p>
             </main>
         </section>
     <footer id="footer" class="bg-primary">
