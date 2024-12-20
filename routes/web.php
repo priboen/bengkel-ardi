@@ -14,6 +14,7 @@ Route::get('/', function () {
 })->name('beranda');
 
 Route::get('/produk', [PromoController::class, 'promosForFrontend'])->name('produk');
+Route::get('/produk/{id}', [ProductController::class, 'detailProduk'])->name('produk.detail');
 Route::post('/produk/filter', [PromoController::class, 'filterProducts'])->name('produk.filter');
 
 
