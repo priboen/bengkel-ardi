@@ -118,4 +118,16 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('product.index')->with('success', 'Produk berhasil dihapus!');
     }
+
+    public function detailProduk($id)
+    {
+        try {
+            $product = Product::findOrFail($id);
+            $whatsappNumber = '6282257968570';
+
+            return view('detail', compact(['product', 'whatsappNumber']));
+        } catch (\Exception $e) {
+            return redirect()->route('produk')->with('error', 'Produk tidak ditemukan!');
+        }
+    }
 }
