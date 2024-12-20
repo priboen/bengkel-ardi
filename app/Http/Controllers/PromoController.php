@@ -53,29 +53,28 @@ class PromoController extends Controller
     }
 
     public function promosForFrontend()
-{
-    $promos = Promo::all();
-    $categories = Category::with('products')->get();
-    return view('product', compact(['promos', 'categories']));
-}
-
-public function filterProducts(Request $request)
-{
-    // Ambil daftar kategori yang dipilih
-    $categoryIds = $request->input('category_ids', []);
-
-    // Jika tidak ada kategori yang dipilih, ambil semua kategori beserta produknya
-    if (empty($categoryIds)) {
+    {
+        $promos = Promo::all();
         $categories = Category::with('products')->get();
-    } else {
-        // Jika ada kategori yang dipilih, filter berdasarkan kategori tersebut
-        $categories = Category::with('products')
-            ->whereIn('id', $categoryIds)
-            ->get();
+        return view('product', compact(['promos', 'categories']));
     }
 
-    // Kembalikan kategori beserta produk dalam format JSON
-    return response()->json($categories);
-}
+    public function filterProducts(Request $request)
+    {
 
+        $categoryIds = $request->input('category_ids', []);
+
+
+        if (empty($categoryIds)) {
+            $categories = Category::with('products')->get();
+        } else {
+
+            $categories = Category::with('products')
+                ->whereIn('id', $categoryIds)
+                ->get();
+        }
+
+
+        return response()->json($categories);
+    }
 }
