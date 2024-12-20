@@ -34,6 +34,16 @@
                 <li><a href="{{ route('produk') }}">Product</a></li>
             </ul>
         </div>
+        <div class="float-right">
+            <form method="GET" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cari nama Produk" name="name">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </nav>
     <div class="banner">
         <div class="contain">
@@ -209,7 +219,7 @@
         <div class="contain d-flex justify-content-between align-items-center">
             <a href="#"><img src="{{ asset('img/kings-logo.svg') }}" alt="logo" width="150"
                     height="100"></a>
-                <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
+            <h5 class="copyright text-white">Copyright © 2024 King's Motorcycle</h5>
             <a href="#" class="footer-link text-white">Kebijakan & Privasi</a>
     </footer>
     <script>
