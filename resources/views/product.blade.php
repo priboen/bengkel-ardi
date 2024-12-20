@@ -47,6 +47,16 @@
                 <li><a href="{{ route('produk') }}" class="active">Product</a></li>
             </ul>
         </div>
+        <div class="float-right">
+            <form method="GET" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cari nama Produk" name="name">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </nav>
     <section id="hero">
         <div class="banner">
@@ -61,14 +71,6 @@
             <div class="contain promo-box d-flex">
                 <div class="sidebar contain">
                     <h1 class="font-weight-bold">Category</h1>
-                    {{-- <ul>
-                        @foreach ($categories as $category)
-                            <li>
-                                <input type="checkbox" id="category-{{ $category->id }}">
-                                <label for="category-{{ $category->id }}">{{ $category->name }}</label>
-                            </li>
-                        @endforeach
-                    </ul> --}}
                     <ul>
                         @foreach ($categories as $category)
                             <li>
@@ -77,7 +79,6 @@
                             </li>
                         @endforeach
                     </ul>
-
                 </div>
                 <header>
                     <div class="promo-header contain">
@@ -108,13 +109,13 @@
                     </div>
                 </header>
             </div>
-            <section id="products-grid">
+            <section id="products-grid contain">
                 @foreach ($categories as $category)
                     <main class="product-section contain">
                         <h1 class="font-weight-bold">{{ $category->name }}</h1>
                         <div class="product-grid contain">
                             @foreach ($category->products as $product)
-                                <div class="product-card">
+                                <div class="product-card" data-id="{{ $product->id }}">
                                     <img src="{{ asset('storage/product_images/' . $product->image) }}"
                                         alt="{{ $product->name }}">
                                     <h3>{{ $product->name }}</h3>
@@ -125,15 +126,6 @@
                     </main>
                 @endforeach
             </section>
-            {{-- <div id="product-grid" class="product-grid contain">
-                @foreach ($category->products as $product)
-                    <div class="product-card">
-                        <img src="{{ asset('storage/product_images/' . $product->image) }}" alt="{{ $product->name }}">
-                        <h3>{{ $product->name }}</h3>
-                        <p>Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                    </div>
-                @endforeach
-            </div> --}}
         </section>
     </section>
     <footer id="footer" class="bg-primary">
@@ -148,16 +140,29 @@
     <script>
         document.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) { // Jika pengguna menggulir lebih dari 50px
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         });
     </script>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                card.addEventListener('click', function() {
+
+                    const productId = this.getAttribute('data-id');
 
 
+                    window.location.href = `/produk/${productId}`;
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
