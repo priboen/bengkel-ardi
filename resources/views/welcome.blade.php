@@ -179,8 +179,8 @@
                                                 <i class="far fa-user"></i>
                                             </div>
                                         </div>
-                                        <input id="name" type="text" class="form-control" name="name"
-                                            autofocus placeholder="Nama">
+                                        <input type="text" class="form-control" name="name"
+                                            placeholder="Nama">
                                     </div>
                                 </div>
                                 <div class="form-group floating-addon">
@@ -191,7 +191,7 @@
                                                 <i class="fas fa-envelope"></i>
                                             </div>
                                         </div>
-                                        <input id="email" type="email" class="form-control" name="email"
+                                        <input type="email" class="form-control" name="email"
                                             placeholder="Email">
                                     </div>
                                 </div>
