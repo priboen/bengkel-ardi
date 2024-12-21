@@ -60,15 +60,13 @@
     <div class="banner">
         <div class="contain">
             <div class="text text-white">
-                <h1 class="font-weight-bold">From Breakdown to Back <br>on the Road.</br></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</br>
-                    ad minim veniam, quis nostrud exercitation.</p>
+                <h1 class="font-weight-bold">Detail Produk</br></h1>
+                <p>Dapatkan juga produk terbaik lainnya dari King's Motor.</p>
             </div>
         </div>
     </div>
-    <div class="container mt-5">
-        <h1 class="mb-4">Detail Produk</h1>
+    <div class="container mt-5 mb-5">
+        <h1 class="font-weight-bold mb-4">Detail Produk</h1>
         <div class="card">
             <div class="card-body">
                 <div class="row">
@@ -77,10 +75,11 @@
                             class="img-fluid">
                     </div>
                     <div class="col-md-8">
-                        <h2>{{ $product->name }}</h2>
+                        <h2 class="font-weight-bold">{{ $product->name }}</h2>
                         <p class="text-muted">Harga: <strong>Rp
                                 {{ number_format($product->price, 0, ',', '.') }}</strong></p>
                         <p>Stok Tersedia: <strong>{{ $product->stock }}</strong></p>
+                        <p>{{ $product->description }}</p>
                         <a href="{{ route('produk') }}" class="btn btn-primary mt-3">Kembali ke Produk</a>
                         <a href="https://wa.me/{{ $whatsappNumber }}?text={{ urlencode('Halo, saya tertarik untuk membeli produk ' . $product->name . ' dengan harga Rp ' . number_format($product->price, 0, ',', '.') . '. Apakah masih tersedia?') }}"
                             target="_blank" class="btn btn-success mt-3">
