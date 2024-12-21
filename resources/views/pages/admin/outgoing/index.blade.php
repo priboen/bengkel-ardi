@@ -15,6 +15,7 @@
                 <h1>Barang Keluar</h1>
                 <div class="section-header-button">
                     <a href="{{ route('outgoing.create') }}" class="btn btn-primary">Tambah</a>
+                    <a href="{{ route('export.outgoing-items') }}" class="btn btn-success">Export Excel</a>
                 </div>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></div>

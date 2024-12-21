@@ -1,5 +1,7 @@
 <?php
 
+use App\Exports\IncomingItemsExport;
+use App\Exports\OutgoingItemsExport;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\OutgoingItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,4 +34,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('companies', CompanyController::class);
     Route::resource('incoming', IncomingItemController::class);
     Route::resource('outgoing', OutgoingItemController::class);
+
+    Route::get('/export-incoming-items', function () {
+        return Excel::download(new IncomingItemsExport, 'incoming_items.xlsx');
+    })->name('export.incoming-items');
+
+    Route::get('/export-outgoing-items', function () {
+        return Excel::download(new OutgoingItemsExport, 'outgoing_items.xlsx');
+    })->name('export.outgoing-items');
 });
