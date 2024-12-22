@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\Promo;
 use Illuminate\Http\Request;
 
@@ -52,12 +53,30 @@ class PromoController extends Controller
         return redirect()->route('promos.index');
     }
 
-    public function promosForFrontend()
+    public function promosForFrontend(Request $request)
     {
+        $search = $request->input('search'); // Ambil parameter pencarian dari request
+
+        // Ambil semua promo
         $promos = Promo::all();
-        $categories = Category::with('products')->get();
-        return view('product', compact(['promos', 'categories']));
+
+        // Query kategori dan produk dengan filter pencarian
+        $categories = Category::with(['products' => function ($query) use ($search) {
+            if ($search) {
+                $query->where('name', 'like', '%' . $search . '%');
+            }
+        }])->get();
+
+        // Jika ingin mengambil semua produk tanpa kategori
+        $filteredProducts = Product::query();
+        if ($search) {
+            $filteredProducts->where('name', 'like', '%' . $search . '%');
+        }
+        $filteredProducts = $filteredProducts->get();
+
+        return view('product', compact('promos', 'categories', 'filteredProducts', 'search'));
     }
+
 
     public function filterProducts(Request $request)
     {

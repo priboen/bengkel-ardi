@@ -34,16 +34,6 @@
                 <li><a href="{{ route('produk') }}">Product</a></li>
             </ul>
         </div>
-        <div class="float-right">
-            <form method="GET" action="">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari nama Produk" name="name">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
     </nav>
     <div class="banner">
         <div class="contain">

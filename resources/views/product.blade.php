@@ -48,11 +48,12 @@
             </ul>
         </div>
         <div class="float-right">
-            <form method="GET" action="">
+            <form method="GET" action="{{ route('produk') }}">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari nama Produk" name="name">
+                    <input type="text" class="form-control" placeholder="Cari nama Produk" name="search"
+                        value="{{ request('search') }}">
                     <div class="input-group-append">
-                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>
@@ -109,7 +110,7 @@
                     </div>
                 </header>
             </div>
-            <section id="products-grid contain">
+            {{-- <section id="products-grid contain">
                 @foreach ($categories as $category)
                     <main class="product-section contain">
                         <h1 class="font-weight-bold">{{ $category->name }}</h1>
@@ -125,7 +126,43 @@
                         </div>
                     </main>
                 @endforeach
+            </section> --}}
+            <section id="products-grid contain">
+                @if ($search)
+                    <h3 class=" mt-3 font-weight-bold">Hasil Pencarian untuk "{{ $search }}"</h3>
+                    @if ($filteredProducts->isEmpty())
+                        <p>Tidak ada produk ditemukan.</p>
+                    @else
+                        <div class=" product-grid contain">
+                            @foreach ($filteredProducts as $product)
+                                <div class="product-card" data-id="{{ $product->id }}">
+                                    <img src="{{ asset('storage/product_images/' . $product->image) }}"
+                                        alt="{{ $product->name }}">
+                                    <h3>{{ $product->name }}</h3>
+                                    <p>Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                @else
+                    @foreach ($categories as $category)
+                        <main class="product-section contain">
+                            <h1 class="font-weight-bold">{{ $category->name }}</h1>
+                            <div class="product-grid contain">
+                                @foreach ($category->products as $product)
+                                    <div class="product-card" data-id="{{ $product->id }}">
+                                        <img src="{{ asset('storage/product_images/' . $product->image) }}"
+                                            alt="{{ $product->name }}">
+                                        <h3>{{ $product->name }}</h3>
+                                        <p>Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </main>
+                    @endforeach
+                @endif
             </section>
+
         </section>
     </section>
     <footer id="footer" class="bg-primary">
