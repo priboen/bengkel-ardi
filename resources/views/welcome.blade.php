@@ -38,33 +38,12 @@
     <div class="banner">
         <div class="contain">
             <div class="text text-white">
-                <h1 class="font-weight-bold">From Breakdown to Back <br>on the Road.</br></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</br>
-                    ad minim veniam, quis nostrud exercitation.</p>
             </div>
         </div>
     </div>
     <section class="info-card container-card contain">
         <!-- Card 1 -->
         <div class="full-info-card d-flex">
-            <div class="banner-info-card">
-                <div class="contain">
-                    <img src="{{ asset('/img/landing/info-store.svg') }}" alt="product" class="icon1">
-                    <div class="text">
-                        <h3 class="contain text-secondary">
-                            30+ Cabang Jabodetabek
-                        </h3>
-                        <p class="contain text-white">
-                            Bengkel BOS memiliki 30 cabang yang tersebar di area JABODETABEK. BOS hadir untuk
-                            melayani
-                            perawatan
-                            kendaraan anda dari Ban, Oli, dan Servis.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
             <!-- Card 2 -->
             <div class="box-card-secondary bg-white3">
                 <div class="card-icon-secondary">
@@ -72,7 +51,7 @@
                 </div>
                 <h6 class="card-head-secondary text-dark">50+ Produk tersedia</h6>
                 <p class="card-desc-secondary">
-                    Kami menyediakan lebih dari 50 produk yang tersedia di semua cabang kami.
+                    Kami menyediakan lebih dari 50 produk yang tersedia di bengkel kami.
                 </p>
             </div>
 
@@ -83,7 +62,7 @@
                 </div>
                 <h6 class="card-head-secondary text-dark">Customer Service</h6>
                 <p class="card-desc-secondary">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                    Kami siap memberikan pelayanan terbaik secara online maupun offline pada bengkel.
                 </p>
             </div>
 
@@ -94,7 +73,7 @@
                 </div>
                 <h6 class="card-head-secondary text-dark">Mekanik Berkualitas</h6>
                 <p class="card-desc-secondary">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                    Mekanik kami siap membantu menangani masalah kendaraan anda.
                 </p>
             </div>
         </div>
@@ -134,14 +113,12 @@
                     <h1 class="location-name"> Lokasi </h1>
                 </div>
                 <div class="location-body text">
-                    <h1 class="location-head">Kings Motorcycle</h1>
+                    <h1 class="location-head">{{ $company->name ?? 'Belum diatur' }}</h1>
                     <p class="location-desc d-flex">
-                        Bali United Office / Wisma Achilles Jl. Panjang No.29, RT.8/RW.1,
-                        Kedoya Sel., Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus
-                        Jakarta 11510
-                    </p> <label class="text"> (021) 56949669 </label>
+                        {{ $company->address ?? 'Belum diatur' }}
+                    </p> <label class="text"> {{ $company->phone ?? 'Belum diatur' }} </label>
                     <p>
-                        boscare@bengkelbos.co.id
+                        {{ $company->email ?? 'Belum diatur' }}
                     </p>
                 </div>
             </div>
@@ -153,14 +130,14 @@
                 <div class="row">
                     <div class="contact-box col-12 col-md-12 col-lg-10 p-0 d-flex flex-row-reverse gap-5">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.316774763866!2d112.60862778600742!3d-7.966178158906411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788286b690daf5%3A0xd4c41035e86e672e!2sNasi%20Cumi%20Hitam%20Madura%20Pak%20Kris!5e0!3m2!1sid!2sid!4v1734185133265!5m2!1sid!2sid"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.0878574447775!2d109.52061727571876!3d-7.455532392555748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655307752e37db%3A0x144a17e6e37324ad!2sJl.%20Klinik%20Lama%2C%20Mandiraja%20Kulon%2C%20Kec.%20Mandiraja%2C%20Kab.%20Banjarnegara%2C%20Jawa%20Tengah%2053473!5e0!3m2!1sid!2sid!4v1735636885832!5m2!1sid!2sid"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <div class="card-body">
                             <div class="text-primary text-center">
                                 <h1>Kontak Kami</h1>
                             </div>
-                            <form method="POST">
+                            <form id="contact-form" method="GET">
                                 <div class="form-group floating-addon">
                                     <label>Nama</label>
                                     <div class="input-group">
@@ -169,8 +146,8 @@
                                                 <i class="far fa-user"></i>
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control" name="name"
-                                            placeholder="Nama">
+                                        <input type="text" id="name" class="form-control" name="name"
+                                            placeholder="Nama" required>
                                     </div>
                                 </div>
                                 <div class="form-group floating-addon">
@@ -181,14 +158,14 @@
                                                 <i class="fas fa-envelope"></i>
                                             </div>
                                         </div>
-                                        <input type="email" class="form-control" name="email"
-                                            placeholder="Email">
+                                        <input type="email" id="email" class="form-control" name="email"
+                                            placeholder="Email" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea class="form-control" placeholder="Masukkan pesan anda" data-height="150"></textarea>
+                                    <textarea id="message" class="form-control" placeholder="Masukkan pesan anda" data-height="150" required></textarea>
                                 </div>
 
                                 <div class="form-group text-right">
@@ -197,6 +174,7 @@
                                     </button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-7 p-0">
@@ -220,6 +198,26 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+    </script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+
+            var whatsappMessage =
+                `Nama: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+
+
+            var url = `https://wa.me/6282257968570?text=${whatsappMessage}`;
+
+
+            window.open(url, '_blank');
         });
     </script>
 </body>

@@ -85,7 +85,6 @@ nav a img {
     padding: 0px 15px;
     margin: 0 auto;
     height: 100%;
-    max-width: 1650px;
     align-content: center;
     z-index: 1;
 }
@@ -96,12 +95,8 @@ nav a img {
 
 .container-card {
     display: flex;
-    flex-flow: wrap;
     gap: 0px;
     padding: 40px 20px;
-    justify-content: space-between;
-    align-items: stretch;
-    max-width: 1430px;
 }
 
 .container-promotion {
@@ -297,7 +292,6 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 }
 
 .box-card-secondary {
-    max-width: 20%;
     padding: 30px;
 }
 
@@ -464,11 +458,6 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
         max-width: 768px;
         align-content: center;
         z-index: 1;
-    }
-
-    .full-info-card {
-        flex-flow: column;
-        width: 80%;
     }
 
     .box-card-secondary {

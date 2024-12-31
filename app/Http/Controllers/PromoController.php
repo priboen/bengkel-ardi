@@ -82,18 +82,16 @@ class PromoController extends Controller
     {
 
         $categoryIds = $request->input('category_ids', []);
-
+        $promos = Promo::all();
+        $kategori = Category::all();
 
         if (empty($categoryIds)) {
             $categories = Category::with('products')->get();
         } else {
-
             $categories = Category::with('products')
                 ->whereIn('id', $categoryIds)
                 ->get();
         }
-
-
-        return response()->json($categories);
+        return view('filtered-product', compact(['categories', 'promos', 'kategori']));
     }
 }

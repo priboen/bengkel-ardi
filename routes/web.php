@@ -3,6 +3,7 @@
 use App\Exports\IncomingItemsExport;
 use App\Exports\OutgoingItemsExport;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\IncomingItemController;
@@ -12,9 +13,11 @@ use App\Http\Controllers\PromoController;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('beranda');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('beranda');
+
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
 Route::get('/produk', [PromoController::class, 'promosForFrontend'])->name('produk');
 Route::get('/produk/{id}', [ProductController::class, 'detailProduk'])->name('produk.detail');
