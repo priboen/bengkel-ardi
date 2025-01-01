@@ -72,14 +72,19 @@
             <div class="contain promo-box d-flex">
                 <div class="sidebar contain">
                     <h1 class="font-weight-bold">Category</h1>
-                    <ul>
-                        @foreach ($categories as $category)
-                            <li>
-                                <input type="checkbox" id="category-{{ $category->id }}">
-                                <label for="category-{{ $category->id }}">{{ $category->name }}</label>
-                            </li>
-                        @endforeach
-                    </ul>
+                    <form id="category-filter-form" action="{{ route('produk.filter') }}" method="POST">
+                        @csrf
+                        <ul>
+                            @foreach ($categories as $category)
+                                <li>
+                                    <input type="checkbox" id="category-{{ $category->id }}" name="category_ids[]"
+                                        value="{{ $category->id }}">
+                                    <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <button type="submit" class="btn btn-primary mt-3">Filter</button>
+                    </form>
                 </div>
                 <header>
                     <div class="promo-header contain">
@@ -110,30 +115,13 @@
                     </div>
                 </header>
             </div>
-            {{-- <section id="products-grid contain">
-                @foreach ($categories as $category)
-                    <main class="product-section contain">
-                        <h1 class="font-weight-bold">{{ $category->name }}</h1>
-                        <div class="product-grid contain">
-                            @foreach ($category->products as $product)
-                                <div class="product-card" data-id="{{ $product->id }}">
-                                    <img src="{{ asset('storage/product_images/' . $product->image) }}"
-                                        alt="{{ $product->name }}">
-                                    <h3>{{ $product->name }}</h3>
-                                    <p>Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </main>
-                @endforeach
-            </section> --}}
             <section id="products-grid contain">
                 @if ($search)
                     <h3 class=" mt-3 font-weight-bold">Hasil Pencarian untuk "{{ $search }}"</h3>
                     @if ($filteredProducts->isEmpty())
                         <p>Tidak ada produk ditemukan.</p>
                     @else
-                        <div class=" product-grid contain">
+                        <div class="product-grid contain">
                             @foreach ($filteredProducts as $product)
                                 <div class="product-card" data-id="{{ $product->id }}">
                                     <img src="{{ asset('storage/product_images/' . $product->image) }}"
@@ -186,16 +174,37 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-
             const productCards = document.querySelectorAll('.product-card');
-
             productCards.forEach(card => {
                 card.addEventListener('click', function() {
-
                     const productId = this.getAttribute('data-id');
-
-
                     window.location.href = `/produk/${productId}`;
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#category-filter-form input[type="checkbox"]').on('change', function() {
+                var selectedCategories = [];
+                $('#category-filter-form input[type="checkbox"]:checked').each(function() {
+                    selectedCategories.push($(this).val());
+                });
+
+                $.ajax({
+                    url: "{{ route('produk.filter') }}", // URL untuk filter produk
+                    method: "POST",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        category_ids: selectedCategories,
+                    },
+                    success: function(response) {
+                        // Gantikan konten produk dengan hasil filter
+                        $('.products-list').html(response);
+                    },
+                    error: function() {
+                        alert('Terjadi kesalahan saat memfilter produk.');
+                    }
                 });
             });
         });

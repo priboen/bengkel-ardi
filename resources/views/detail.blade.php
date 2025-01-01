@@ -81,10 +81,11 @@
                         <p>Stok Tersedia: <strong>{{ $product->stock }}</strong></p>
                         <p>{{ $product->description }}</p>
                         <a href="{{ route('produk') }}" class="btn btn-primary mt-3">Kembali ke Produk</a>
-                        <a href="https://wa.me/{{ $whatsappNumber }}?text={{ urlencode('Halo, saya tertarik untuk membeli produk ' . $product->name . ' dengan harga Rp ' . number_format($product->price, 0, ',', '.') . '. Apakah masih tersedia?') }}"
+                        <a href="https://wa.me/{{ $whatsappNumber }}?text=Halo%2C%20Saya%20tertarik%20membeli%20produk%20{{ urlencode($product->name) }}%2C%20dengan%20harga%20Rp%20{{ number_format($product->price, 0, ',', '.') }}%0D%0ANama%20%3A%0D%0AJumlah%20yang%20ingin%20dibeli%20%3A"
                             target="_blank" class="btn btn-success mt-3">
                             <i class="fab fa-whatsapp"></i> Pesan Sekarang!
                         </a>
+
                     </div>
                 </div>
             </div>
